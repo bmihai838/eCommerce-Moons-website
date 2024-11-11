@@ -1,7 +1,40 @@
 {
     "products": [
-      { "id": 1, "name": "Product A", "price": 29.99, "description": "A great product" },
-      { "id": 2, "name": "Product B", "price": 49.99, "description": "Another great product" }
+      {
+        "id": 1,
+        "name": "Product A",
+        "price": 29.99,
+        "description": "A great product",
+        "imageUrl": "./assets/tshirts/SpaceX_Starship_Flight4.webp" 
+      },
+      { 
+      "id": 2,
+      "name": "Product B",
+      "price": 49.99,
+      "description": "Another great product",
+      "imageUrl": "./assets/tshirts/SpaceX_Starship_Flight5_Tshirt.webp"
+      },
+      {
+        "id": 3,
+        "name": "Product C",
+        "price": 39.99,
+        "description": "A great product",
+        "imageUrl": "./assets/tshirts/SpaceX_Unisex.webp" 
+      },
+      {
+        "id": 4,
+        "name": "Product D",
+        "price": 59.99,
+        "description": "A great product",
+        "imageUrl": "./assets/tshirts/STARSHIPFLIGHT2.webp" 
+      },
+      {
+        "id": 5,
+        "name": "Product E",
+        "price": 19.99,
+        "description": "A great product",
+        "imageUrl": "./assets/tshirts/STARSHIPFLIGHT3.webp" 
+      }
     ]
   }
   
