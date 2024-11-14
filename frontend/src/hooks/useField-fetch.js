@@ -13,7 +13,7 @@ export const useField = (type) => {
     return {
         inputProps: { type, value, onChange},
         value,
-        reset
+        reset: () => setValue('')
     }
 }
 
@@ -22,22 +22,22 @@ export const useFetch = (url) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(url)
-                setData(response.data)
-            } catch (err) {
-                setError(err.message || 'An error occured')
-            } finally {
-                setLoading(false)
-            }
+    const fetchData = async () => {
+        try {
+            setLoading(true)
+            const response = await axios.get(url)
+            setData(response.data)
+        } catch (err) {
+            setError(err.message || 'An error occured')
+        } finally {
+            setLoading(false)
         }
-
-    fetchData()
-    }, [url])
+    }
+        useEffect(() => {
+            fetchData()
+        }, [url])
 
     
 
-    return { data, loading, error }
+    return { data, loading, error, refetch: fetchData }
 }

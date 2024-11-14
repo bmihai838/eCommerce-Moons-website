@@ -8,7 +8,7 @@ export const useProducts = (category) => {
     ? `${API_URL}/products/${category}`
     : `${API_URL}/products`
 
-  const { data, loading, error } = useFetch(url)
+  const { data, loading, error, refetch } = useFetch(url)
 
   const transformedData = data?.map(product => ({
     ...product,
@@ -16,7 +16,7 @@ export const useProducts = (category) => {
     _id: undefined
   }))
     
-  return { data: transformedData, loading, error } 
+  return { data: transformedData, loading, error, refetch } 
 }
 
 export const useAddProduct = () => {
@@ -25,7 +25,7 @@ export const useAddProduct = () => {
       const response = await axios.post(`${API_URL}/products`, productData)
       return response.data
     } catch (err) {
-      throw err.message
+        throw err.message
     }
   };
 
