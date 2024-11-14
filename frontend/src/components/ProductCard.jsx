@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
      
 const ProductCard = ({ product }) => {
 
-    const { imageUrl, name, price, id, description } = product
+    const { image, name, price, id, description } = product
 
     return (            
-      <div className="rounded-lg max-w-sm mb-36">
+      <div className="rounded-lg max-w-xs ">
         {/* Product Image */}
         <Link to={`/products/${id}`}>
           <img 
-            src={imageUrl}
+            src={image}
             alt={name}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-md"    
           />  
