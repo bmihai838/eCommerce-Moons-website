@@ -1,22 +1,20 @@
-import { useFetch } from "../hooks/useField-fetch"
-import ProductCard from "../components/ProductCard"
-import { useProducts } from "../hooks/useProducts"
+import heroImage from '/assets/wall_homepage.webp'
 
 const HomePage = () => {
-    const { data: products, loading, error } = useProducts()
-
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error: {error}</p>
-
-    return(
-      <div className="container mx-auto p-4 pt-36">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">       
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+  return (
+    <div className="pt-34">
+      <div className="relative h-screen">
+        <img
+          src={heroImage}
+          alt="Hero Image"
+          className="w-full h-full"
+        />
+        <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-32 bg-black text-white px-14 py-3 text-lg font-semibold hover:bg-white hover:text-black transition-colors">
+          SHOP NOW
+        </button>
       </div>
-    )
+    </div>
+  )
 }
 
 export default HomePage
