@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
-     
-const ProductCard = ({ product }) => {
+import { useDispatch } from "react-redux";
+import { cartActions } from "../store/slices/cartSlice";     
 
+const ProductCard = ({ product }) => {
     const { image, name, price, id, description } = product
+    const dispatch = useDispatch()
+
+    const handleAddToCart = () => {
+      console.log('Adding to card with image:', image)
+      dispatch(cartActions.addToCart({
+          id,
+          name,
+          price,
+          image
+      }))
+    }
 
     return (            
       <div className="flex flex-col h-[480px]  mb-10 rounded-lg shadow-sm max-w-xs">
@@ -20,8 +32,7 @@ const ProductCard = ({ product }) => {
         {/* Product Details */}
         <div className="text-center p-4">
           <h3 className="text-lg font-semibold truncate">{name}</h3>
-          <p className="text-gray-600 text-sm mt-2 line-clamp-2">{description}</p>
-          <p className="text-lg font-bold mt-2">${price.toFixed(2)}</p>
+          <p className="text-md font-semibold mt-2">${price.toFixed(2)}</p>
         </div>
 
         {/* Action Buttons */}
@@ -33,7 +44,7 @@ const ProductCard = ({ product }) => {
             View Details
           </Link>
           <button
-            onClick={() => console.log('Add to Cart:', product)}
+            onClick={handleAddToCart}
             className="py-2 w-1/2 bg-black text-white text-center rounded-md border-2 border-transparent hover:bg-white hover:text-black hover:border-gray-500 shadow-md transition-colors"
           >
             Add to Cart

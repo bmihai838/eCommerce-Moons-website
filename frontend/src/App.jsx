@@ -13,20 +13,21 @@ const App = () => {
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true}}>
       <Navbar />
       <Routes>
+        {/* Main Routes */}
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/products/:id" element={<ProductPage />}></Route>
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/checkout" element={<CheckoutPage />}></Route>
         <Route path="/admin" element={<AdminPage />} ></Route>
-        {/* MEN Routes */}
+        {/* MEN  */}
         <Route path="/mens/shirts" element={<ProductGrid category="MENS" subcategory="shirt" title="MEN"/>}></Route>
         <Route path="/mens/outerwear" element={<ProductGrid category="MENS" subcategory="outerwear" title="MEN"/>}></Route>
         <Route path="/mens/all" element={<ProductGrid category="MENS" title="MENS"/>}></Route>
-        {/* WOMENS Routes*/}
+        {/* WOMENS */}
         <Route path="/womens/shirts" element={<ProductGrid category="WOMENS" subcategory="shirt" title="WOMEN"/>}></Route>
         <Route path="/womens/outerwear" element={<ProductGrid category="WOMENS" subcategory="outerwear" title="WOMEN"/>}></Route>
         <Route path="/womens/all" element={<ProductGrid category="WOMENS" title="WOMENS"/>}></Route>
-        {/* KIDS Routes*/}
+        {/* KIDS */}
         <Route path="/kids/shirts" element={<ProductGrid category="KIDS" subcategory="shirt" title="KID"/>}></Route>
         <Route path="/kids/outerwear" element={<ProductGrid category="KIDS" subcategory="outerwear" title="KID"/>}></Route>
         <Route path="/kids/all" element={<ProductGrid category="KIDS" title="KIDS"/>}></Route>

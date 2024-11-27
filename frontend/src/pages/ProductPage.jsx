@@ -10,19 +10,31 @@ const ProductPage = ( ) => {
     if (!product) return <div>Product not found</div>
 
     const { image, name, price, description } = product
+    const sizes =["XS", "S", "M", "L", "XL"]
+
+    const handleSizeSelect = (size) => {
+      setSelectedSize(size)
+    }
 
     return (
-    <div className="flex rounded-lg max-w-md py-48 mx-48 items-center">
-      {/* Product Image */}
-      <img 
-        src={image}
-        alt={name}
-        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-md"    
-      />  
-      <div className="text-center px-36">
-        <h3 className="text-lg font-semibold mt-2">{name}</h3>
-        <p className="text-gray-600">{description}</p>
-        <p className="text-lg font-bold mt-2">{price.toFixed(2)}</p>
+    <div className="container mx-auto max-w-6xl py-32">
+      <div className="flex gap-16">
+        {/* Product Image */}
+        <img 
+          src={image}
+          alt={name}
+          className="h-[80vh] max-w-[70vh] object-cover transition-transform duration-300 rounded-md"    
+        />  
+        {/* Product Details */}
+        <div className="w-1/2 pt-8 space-y-6">
+          <h3 className="text-3xl font-semibold">{name}</h3>
+          <p className="text-xl font-bold mt-2">${price.toFixed(2)}</p>
+          <div className="border-b border-gray-500"></div>
+          <p className="text-gray-600 font-bold">Fabric Content:</p>
+          <p className="text-black whitespace-pre-wrap">{description}</p>
+          <p className="text-gray-600 pt-28">Color: Black</p>
+          <p className="text-gray-600 pt-2">Size: </p>
+        </div>
       </div>
     </div>
     )

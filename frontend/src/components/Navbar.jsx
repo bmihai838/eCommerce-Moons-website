@@ -39,11 +39,11 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full bg-black shadow-lg z-50">
-      <div className="px-4 py-4 flex items-center">
+      <div className="px-4 py-8 md:py-4 flex items-center">
         {/* Left side - Logo */}
         <Link to="/" className="font-bold text-xl text-white flex items-center gap-2">
           <img src="/assets/logo/moon2.webp" alt="Moons"  
-            className="w-auto h-20 md:h-24 rounded-md"
+            className="h-0 md:h-16 rounded-md"
           />
         </Link>
 

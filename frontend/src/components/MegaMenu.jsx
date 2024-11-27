@@ -1,19 +1,18 @@
-import { Menu, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const MegaMenu = ({ title, items }) => (
-  <div className="group relative px-12">
-    <span className="text-white font-bold cursor-pointer text-xl">
+  <div className="group relative px-3 sm:px-6 md:px-6 lg:px-10">
+    <span className="text-white font-bold cursor-pointer text-base sm:text-lg md:text-xl">
       {title}
     </span>
           
     {/* Menu Content */}
-    <div className="absolute top-full left-12 bg-black w-48 
+    <div className="absolute top-full left-0 sm:left-4 md:left-6 lg:left-8 bg-black w-48 
                     opacity-0 group-hover:opacity-100 invisible
                     group-hover:visible transform -translate-y-2
                     group-hover:translate-y-0 transition-all
                     duration-300 ease-in-out">
-      <div className="h-9 md:h-11 text-white"></div>
+      <div className="h-7 md:h-8 text-white"></div>
       <div>
         {items.map(item => (
         <Link 

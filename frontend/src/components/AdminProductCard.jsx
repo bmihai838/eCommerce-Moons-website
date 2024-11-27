@@ -15,7 +15,7 @@ const AdminProductCard = ({ product, onDelete, onEdit, isCreating = false, onCan
     // Input Fields
     const nameField = useField('text')
     const priceField = useField('number')
-    const descriptionField = useField('text')
+    const descriptionField = useField('textarea')
     const categoryField = useField('text')
     const subCategoryField = useField('text')
 
@@ -93,7 +93,11 @@ const AdminProductCard = ({ product, onDelete, onEdit, isCreating = false, onCan
               />
               <Input field={nameField} placeholder="Name"/>
               <Input field={priceField} placeholder="Price"/>
-              <Input field={descriptionField} placeholder="Description"/>
+              <textarea
+                {...descriptionField.inputProps}
+                placeholder="Description"
+                className="w-full p-2 rounded border-2 border-black" 
+              />
               <Input field={categoryField} placeholder="Category"/>
               <Input field={subCategoryField} placeholder="Sub Category"/>
 
@@ -130,7 +134,7 @@ const AdminProductCard = ({ product, onDelete, onEdit, isCreating = false, onCan
         {/* Product Details */}
         <div className="text-center">
           <h3 className="text-lg font-semibold mt-2">{name}</h3>
-          <p className="text-gray-600">{description}</p>
+          <p className="text-gray-600 whitespace-pre-wrap">{description}</p>
           <p className="text-lg font-bold mt-2">${price.toFixed(2)}</p>
           <p className="text-sm text-gray-500">Category: {category}</p>
           <p className="text-sm text-gray-500">Sub: {subCategory}</p>
